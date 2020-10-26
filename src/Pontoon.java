@@ -12,9 +12,6 @@ import java.util.Scanner;
  */
 public class Pontoon {
 
-    int gamesPlayed = 0;
-    int gamesWon = 0;
-
     public Pontoon() {
 
         Scanner kboard = new Scanner(System.in);
@@ -26,13 +23,15 @@ public class Pontoon {
         System.out.println("What is your name?");
         String pName = kboard.nextLine();
 
+        int gamesWon = 0;
+        int gamesPlayed = 0;
         do {
 
             Player player = new Player(pName);
             System.out.println("Lets play pontoon "+player.getName());
             Dealer dealer = new Dealer();
 
-            setIntialHand(player, dealer);
+            setInitialHand(player, dealer);
 
             DealerTurn nDealerTurn = new DealerTurn();
             PlayerTurn nPlayerTurn = new PlayerTurn();
@@ -58,7 +57,7 @@ public class Pontoon {
         stats.statistic(gamesWon, gamesPlayed);
     }
 
-    public void setIntialHand(Player player, Dealer dealer) {
+    public void setInitialHand(Player player, Dealer dealer) {
         player.setHand(dealer.playerDrawCard());
         player.setHand(dealer.playerDrawCard());
         dealer.setHand(dealer.drawCard());
