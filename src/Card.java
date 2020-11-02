@@ -1,64 +1,59 @@
+import javafx.scene.image.Image;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * Pontoo_MK2
+ * Pontoon_MK3
  * Card class creates individual card objects with a face name, suit and value
  * @author 18025316
  * Scott Kinsmnan
- * 17/10/2020
+ * 30/10/2020
  */
 public class Card {
 
     private FaceNames faceName;
     private Suits suit;
     private int value;
-    // private Image image;
+    private Image image;
 
+    public Card() {
+    }
 
     /**
+     * Constructor
      * @param faceName String facename
-     * @param suit String suit
+     * @param suit     String suit
      */
     public Card(FaceNames faceName, Suits suit) {
         setFaceName(faceName);
         setSuit(suit);
         setValueEnum();
-    }
 
-    public Card() {
-
-    }
-
-    public FaceNames getFaceName() {
-        return faceName;
+        String fileName = cardToString(faceName, suit);
+        image = new Image("./images/" + fileName);
     }
 
     /**
      * List of face names
-     * @return
+     * @return Array List containing face names
      */
-    public List<FaceNames> getValidFaceNames(){
+    public List<FaceNames> getValidFaceNames() {
         return Arrays.asList(FaceNames.values());
     }
 
     /**
      * @param faceName valid face names
-     * validates and sets facename
+     * validates and sets face name
      */
     public void setFaceName(FaceNames faceName) {
-            this.faceName = faceName;
-    }
-
-    public Suits getSuit() {
-        return suit;
+        this.faceName = faceName;
     }
 
     /**
      * List of suits
-     * @return Array List String of suits
+     * @return Array List of suits
      */
-    public List<Suits> getValidSuit(){
+    public List<Suits> getValidSuit() {
         return Arrays.asList(Suits.values());
     }
 
@@ -72,28 +67,49 @@ public class Card {
         if (validSuits.contains(suit))
             this.suit = suit;
         else
-            throw new IllegalArgumentException("Not a valid suit, valid suits are " +validSuits);
+            throw new IllegalArgumentException("Not a valid suit, valid suits are " + validSuits);
     }
 
+    /**
+     * @return int card value
+     */
     public int getValue() {
-       return value;
+        return value;
     }
 
     /**
      * Sets a value depending on face name
      * Parses any String numbers to ints or converts named cars to correct value
-     * @param
      */
-    public void setValueEnum(){
+    public void setValueEnum() {
         String face = faceName.toString();
         FaceNames f = FaceNames.valueOf(face);
         value = f.getValue();
     }
 
     /**
-     * @return String with face name, suit and value
+     * @return image
      */
-    public String toString(){
-        return String.format(faceName+" of " +suit+ " Value: " +value);
+    public Image getImage() {
+        return image;
+    }
+
+    /**
+     * Converts card facename and suit to string
+     * @return String with face name, suit and value of card
+     */
+    public String toString() {
+        return String.format(faceName + " of " + suit + " Value: " + value);
+    }
+
+    /**
+     * @param faceName face name from enum
+     * @param suit suit from enum
+     * @return String with face name, suit and makes image file name for that card
+     */
+    public String cardToString(FaceNames faceName, Suits suit) {
+        String faceToString = faceName.toString();
+        String suitsToString = suit.toString();
+        return faceToString + "_of_" + suitsToString + ".png";
     }
 }

@@ -1,12 +1,14 @@
+import javafx.scene.image.Image;
 import java.util.ArrayList;
 
 /**
- * Pontoo_MK2
+ * Pontoon_MK3
  * Super class for all users including players and dealer
  * object holding player cards and hand total
+ *
  * @author 18025316
  * Scott Kinsmnan
- * 17/10/2020
+ * 30/10/2020
  */
 public abstract class User {
 
@@ -17,7 +19,7 @@ public abstract class User {
     /**
      * Constructor Array List to hold card objects
      */
-    public User(){
+    public User() {
         hand = new ArrayList<>();
     }
 
@@ -30,12 +32,22 @@ public abstract class User {
 
     /**
      * @param playerCard Card object
-     * Adds card object to card
-     * Add card value to cumulative player total
+     *                   Adds card object to card
+     *                   Add card value to cumulative player total
+     * @return
      */
-    public void setHand(Card playerCard) {
+    public Image setHand(Card playerCard) {
         hand.add(playerCard);
-        playerTotal=playerTotal+playerCard.getValue();
+        playerTotal = playerTotal + playerCard.getValue();
+        return playerCard.getImage();
+    }
+
+    /**
+     * Clear all card objects from hand Array list
+     */
+    public void resetHand() {
+        hand.clear();
+        playerTotal = 0;
     }
 
     /**
@@ -52,8 +64,12 @@ public abstract class User {
     /**
      * Polymorphism test method
      */
-    public void UserShout(){
+    public void UserShout() {
         System.out.println("Damn it I lost again!!");
+    }
+
+    public int getPlayerTotal() {
+        return playerTotal;
     }
 }
 

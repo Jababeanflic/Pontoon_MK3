@@ -1,15 +1,17 @@
+import javafx.scene.image.Image;
+
 /**
- * Pontoo_MK2
+ * Pontoon_MK3
  * Dealer object holding dealer cards and hand total
  * Extends User class
  * @author 18025316
  * Scott Kinsmnan
- * 17/10/2020
+ * 30/10/2020
  */
 
 public class Dealer extends User{
 
-    DeckOfCards Deck = new DeckOfCards();
+    DeckOfCards deck = new DeckOfCards();
 
     public Dealer() {
     }
@@ -25,13 +27,19 @@ public class Dealer extends User{
      * @return Card object for player
      */
     public Card drawCard(){
-        return Deck.drawTopCard();
+        return deck.drawTopCard();
     }
 
     public Card playerDrawCard(){
-        Card newCard = Deck.drawTopCard();
-        System.out.println("You drew "+newCard);
-        return newCard;
+        return deck.drawTopCard();
+    }
+
+    public DeckOfCards getDeck() {
+        return deck;
+    }
+
+    public Image getBackOfCardImage(){
+        return deck.getBackOfCardImage();
     }
 }
 

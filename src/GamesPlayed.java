@@ -1,12 +1,15 @@
 import java.util.Scanner;
 
 /**
- * Pontoo_MK2
+ * Pontoon_MK3
+ *
+ * !!!!!!!!!!!! This class is currently not implemented !!!!!!!!!!!!!!!
+ *
  * GamesPlayed class checks the number of games played and offers the user the option to
  * play again if they are under the max games played allowed.
  * @author 18025316
  * Scott Kinsmnan
- * 17/10/2020
+ * 30/10/2020
  */
 public class GamesPlayed {
 

@@ -1,3 +1,11 @@
+/**
+ * Pontoon_MK3
+ * Enum list of face names for standard deck
+ * @author 18025316
+ * Scott Kinsmnan
+ * 30/10/2020
+ */
+
 public enum FaceNames {
     two(2),
     three(3),

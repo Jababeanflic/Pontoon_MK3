@@ -1,9 +1,12 @@
 /**
- * Pontoo_MK2
- * Statistics class claculates to percentage og games one
+ * Pontoon_MK3
+ *
+ * !!!!!!!!!!!! This class is currently not implemented !!!!!!!!!!!!!!!
+ *
+ * Statistics class calculates to percentage og games one
  * @author 18025316
  * Scott Kinsmnan
- * 17/10/2020
+ * 30/10/2020
  */
 public class Statistics {
 

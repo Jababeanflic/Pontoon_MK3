@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="761.0" prefWidth="948.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DeckViewController">
+   <children>
+      <HBox layoutX="14.0" layoutY="6.0" prefHeight="243.0" prefWidth="928.0">
+         <children>
+            <ImageView fx:id="activeCardImageD1" fitHeight="212.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="activeCardImageD2" fitHeight="212.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="activeCardImageD3" fitHeight="212.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="activeCardImageD4" fitHeight="213.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="activeCardImageD5" fitHeight="212.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <HBox layoutX="10.0" layoutY="542.0" prefHeight="213.0" prefWidth="928.0">
+         <children>
+            <ImageView fx:id="activeCardImageP1" fitHeight="212.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="activeCardImageP2" fitHeight="212.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="activeCardImageP3" fitHeight="212.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="activeCardImageP4" fitHeight="212.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="activeCardImageP5" fitHeight="212.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="activeCardImageP6" fitHeight="212.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <Button fx:id="stickButton" layoutX="531.0" layoutY="364.0" mnemonicParsing="false" onAction="#stickButtonPushed" prefHeight="68.0" prefWidth="145.0" text="Stick" textFill="#121ec3" textOverrun="CLIP">
+         <font>
+            <Font size="36.0" />
+         </font></Button>
+      <Button fx:id="twistButton" layoutX="247.0" layoutY="364.0" mnemonicParsing="false" onAction="#twistButtonPushed" prefHeight="68.0" prefWidth="145.0" text="Twist" textAlignment="CENTER" textFill="#9e0606">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font></Button>
+      <Button fx:id="playAgainButton" layoutX="804.0" layoutY="376.0" mnemonicParsing="false" onAction="#setPlayAgainButton" text="Play Again">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="deckImageView" fitHeight="212.0" fitWidth="153.0" layoutX="10.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField layoutX="10.0" layoutY="497.0" prefHeight="45.0" prefWidth="99.0" text="Player">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="14.0" layoutY="218.0" prefHeight="45.0" prefWidth="99.0" text="Dealer">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>
